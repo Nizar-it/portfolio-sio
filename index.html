@@ -7,7 +7,154 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
+
+    <style>
+        /* Conteneur des boutons principaux (CV & Tableau E4) */
+        .hero-actions {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Design des gros boutons Cyber */
+        .cyber-btn, .cyber-btn:visited {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.8rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .primary-btn, .primary-btn:visited {
+            background: linear-gradient(135deg, #0275d8 0%, #005299 100%);
+            color: #ffffff !important;
+            border: 2px solid #0275d8;
+            box-shadow: 0 4px 14px rgba(2, 117, 216, 0.35);
+        }
+
+        .primary-btn:hover {
+            background: linear-gradient(135deg, #005299 0%, #013a6b 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(2, 117, 216, 0.5);
+            color: #ffffff !important;
+        }
+
+        .secondary-btn, .secondary-btn:visited {
+            background-color: #ffffff;
+            color: #0275d8 !important;
+            border: 2px solid #0275d8;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .secondary-btn:hover {
+            background-color: #0275d8;
+            color: #ffffff !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(2, 117, 216, 0.35);
+        }
+
+        .btn-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Badges de catégories et technologies dans les cartes */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-category {
+            display: inline-block;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.78rem;
+            color: #475569;
+            background: #e2e8f0;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            margin-bottom: 0.9rem;
+            font-weight: bold;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .tag {
+            display: inline-block;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.82rem;
+            background: rgba(2, 117, 216, 0.12);
+            color: #0275d8;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            border: 1px solid rgba(2, 117, 216, 0.35);
+            font-weight: bold;
+        }
+
+        /* Boutons d'action dans les cartes Projets & Veille */
+        .project-links {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px dashed #cbd5e1;
+        }
+
+        .project-btn, .project-btn:visited {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none !important;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            color: #0275d8 !important;
+            background-color: #f8fafc;
+            border: 1.5px solid #0275d8;
+            padding: 0.55rem 1.1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.25s ease;
+            margin-top: 1rem;
+            box-shadow: 0 2px 5px rgba(2, 117, 216, 0.1);
+        }
+
+        .project-links .project-btn {
+            margin-top: 0;
+        }
+
+        .project-btn:hover {
+            background-color: #0275d8;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(2, 117, 216, 0.3);
+        }
+
+        /* Section Veille & Timeline */
+        .veille-intro { margin-bottom: 2rem; }
+        .veille-tools { margin-top: 1.2rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; }
+        .tool-label { font-family: 'Share Tech Mono', monospace; font-weight: bold; font-size: 0.9rem; color: #1e293b; }
+        .subtitle-hero { margin-bottom: 1.2rem; font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: #0275d8; }
+        .cyan-glow { min-height: 4.5rem; height: auto !important; }
+        .timeline-item { position: relative; margin-bottom: 2.5rem; overflow: visible !important; }
+        .timeline-dot { left: -2.5rem !important; top: 1.5rem !important; z-index: 2; }
+    </style>
 </head>
 <body>
     <!-- Écran de démarrage Borg OS -->
@@ -24,14 +171,6 @@
     <header>
         <nav class="navbar">
             <div class="logo-element">NR_SYS</div>
-            
-            <!-- Bouton Menu Burger pour mobile -->
-            <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-
             <ul class="nav-links" id="nav-links">
                 <li><a href="#presentation" class="nav-item active-link hacker-text" data-value="PRÉSENTATION">PRÉSENTATION</a></li>
                 <li><a href="#parcours-sio" class="nav-item hacker-text" data-value="PARCOURS & SIO">PARCOURS & SIO</a></li>
@@ -55,10 +194,15 @@
                 <div class="separator-cyan"></div>
                 <p class="terminal-text">Étudiant en BTS SIO option SLAM, passionné par le développement d'applications web/logicielles et fort d'un bagage solide en administration systèmes et réseaux. Je conçois des solutions performantes, sécurisées et maintenables.</p>
                 
-                <!-- Boutons essentiels pour le jury BTS SIO et les recruteurs -->
                 <div class="hero-actions">
-                    <a href="cv-nizar-rabhi.pdf" target="_blank" class="cyber-btn primary-btn">[ TÉLÉCHARGER MON CV ]</a>
-                    <a href="tableau-synthese-e4.pdf" target="_blank" class="cyber-btn secondary-btn">[ TABLEAU DE SYNTHÈSE E4 ]</a>
+                    <a href="cv-nizar-rabhi.pdf" target="_blank" class="cyber-btn primary-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        TÉLÉCHARGER MON CV
+                    </a>
+                    <a href="tableau-synthese-e4.pdf" target="_blank" class="cyber-btn secondary-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        TABLEAU DE SYNTHÈSE E4
+                    </a>
                 </div>
             </div>
         </section>
@@ -80,7 +224,7 @@
             </div>
         </section>
 
-        <!-- PROJETS (Enrichis pour l'épreuve E4 / E5 SLAM) -->
+        <!-- PROJETS -->
         <section id="projets" class="section">
             <h2 class="section-title">RÉPERTOIRE : PROJETS & RÉALISATIONS</h2>
             <div class="card-grid">
@@ -97,8 +241,8 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <a href="#" target="_blank" class="project-btn">> CODE SOURCE (GITHUB)</a>
-                        <a href="#" target="_blank" class="project-btn">> DOCUMENTATION</a>
+                        <a href="#" target="_blank" class="project-btn">CODE SOURCE (GITHUB)</a>
+                        <a href="#" target="_blank" class="project-btn">DOCUMENTATION</a>
                     </div>
                 </div>
 
@@ -114,7 +258,7 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <a href="#" target="_blank" class="project-btn">> FICHE RÉALISATION</a>
+                        <a href="#" target="_blank" class="project-btn">FICHE RÉALISATION</a>
                     </div>
                 </div>
 
@@ -131,22 +275,21 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <a href="#" target="_blank" class="project-btn">> SCHÉMA RÉSEAU & DOC</a>
+                        <a href="#" target="_blank" class="project-btn">SCHÉMA RÉSEAU & DOC</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- VEILLE TECHNOLOGIQUE (Structurée pour le jury BTS SIO) -->
+        <!-- VEILLE TECHNOLOGIQUE -->
         <section id="veille" class="section">
             <h2 class="section-title">RADAR : VEILLE TECHNOLOGIQUE</h2>
             
-            <!-- Thématique et méthodologie -->
             <div class="cyber-card border-cyan veille-intro">
                 <h3 class="cyan-text">Thématique : Cybersécurité Applicative & Protection des Données (RGPD)</h3>
                 <p>En tant que futur développeur SLAM, ma veille porte sur la sécurisation du code (OWASP Top 10), les vulnérabilités des dépendances logicielles et la conformité au RGPD dès la conception (<em>Privacy by Design</em>).</p>
                 <div class="veille-tools">
-                    <span class="tool-label">Outils de collecte (Push/Pull) :</span>
+                    <span class="tool-label">Outils de collecte :</span>
                     <span class="tag">Feedly (Flux RSS)</span>
                     <span class="tag">Alertes CERT-FR / ANSSI</span>
                     <span class="tag">Google Alerts</span>
@@ -154,30 +297,29 @@
                 </div>
             </div>
 
-            <!-- Articles de veille -->
             <div class="card-grid">
                 <div class="card cyber-card">
                     <p class="date">OCTOBRE 2026 | SOURCE : OWASP / CERT-FR</p>
                     <h3 class="cyan-text">Sécurité des API et Injections SQL</h3>
                     <p>Analyse des nouvelles recommandations sur la sécurisation des requêtes SQL via les ORM modernes (ActiveRecord, PDO) et la gestion des jetons d'authentification.</p>
-                    <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="project-btn">> CONSULTER LA SOURCE</a>
+                    <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="project-btn">CONSULTER LA SOURCE</a>
                 </div>
                 <div class="card cyber-card">
                     <p class="date">SEPTEMBRE 2026 | SOURCE : CNIL</p>
                     <h3 class="cyan-text">Guide RGPD pour les Équipes de Développement</h3>
                     <p>Mise à jour des bonnes pratiques de la CNIL concernant le chiffrement des mots de passe (hachage bcrypt/Argon2), la minimisation des données et la gestion des journaux (logs).</p>
-                    <a href="https://www.cnil.fr/fr/guide-rgpd-du-developpeur" target="_blank" class="project-btn">> CONSULTER LA SOURCE</a>
+                    <a href="https://www.cnil.fr/fr/guide-rgpd-du-developpeur" target="_blank" class="project-btn">CONSULTER LA SOURCE</a>
                 </div>
                 <div class="card cyber-card">
                     <p class="date">AOÛT 2026 | SOURCE : GITHUB SECURITY</p>
                     <h3 class="cyan-text">Vulnérabilités des Dépendances Open-Source</h3>
                     <p>Importance de l'audit automatisé des paquets (Gems Ruby, Composer PHP, pip Python) pour prévenir les attaques de type <em>Supply Chain</em> dans les projets web.</p>
-                    <a href="https://github.com/security" target="_blank" class="project-btn">> CONSULTER LA SOURCE</a>
+                    <a href="https://github.com/security" target="_blank" class="project-btn">CONSULTER LA SOURCE</a>
                 </div>
             </div>
         </section>
 
-        <!-- CERTIFICATIONS -->
+        <!-- CERTIFICATIONS (AVEC LES 3 CARTES : ANSSI, CNIL ET OPENCLASSROOMS) -->
         <section id="certifications" class="section">
             <h2 class="section-title">PROTOCOLES VALIDÉS : CERTIFICATIONS</h2>
             <div class="card-grid">
@@ -191,10 +333,15 @@
                     <p class="date">Modules validés</p>
                     <p>Principes de la protection des données, responsabilités des acteurs et intégration de la sécurité des données personnelles dans les projets informatiques.</p>
                 </div>
+                <div class="card cyber-card border-cyan">
+                    <h3 class="hacker-text" data-value="OpenClassrooms - IA">OpenClassrooms - IA</h3>
+                    <p class="date">Certificat de réussite</p>
+                    <p>Utilisez ChatGPT pour améliorer votre productivité : Prompt Engineering, optimisation de code, aide au débogage et automatisation de tâches techniques.</p>
+                </div>
             </div>
         </section>
 
-        <!-- EXPÉRIENCES (Structure HTML corrigée pour afficher les points de la timeline) -->
+        <!-- EXPÉRIENCES -->
         <section id="experiences" class="section">
             <h2 class="section-title">LOGS : PARCOURS PRO</h2>
             <div class="timeline">
@@ -260,19 +407,17 @@
             <h2 class="section-title">ÉTABLIR LA CONNEXION</h2>
             <div class="contact-wrapper">
                 <div class="contact-info-panel cyber-card">
-                    <p><span class="label">Transmission :</span> <a href="mailto:rabhinizar2@gmail.com" class="contact-link">rabhinizar2@gmail.com</a></p>
-                    <p><span class="label">Fréquence :</span> <a href="tel:+33767736581" class="contact-link">+33 7 67 73 65 81</a></p>
+                    <p><span class="label">Transmission :</span> rabhinizar2@gmail.com</p>
+                    <p><span class="label">Fréquence :</span> +33 7 67 73 65 81</p>
                     <p><span class="label">Nœud :</span> Montlouis-sur-Loire / Tours, France</p>
                     <p><span class="label">Langue :</span> Anglais B2 (Technique)</p>
                 </div>
                 
-                <!-- Astuce : Remplace l'URL action par un lien Formspree (ex: https://formspree.io/f/ton_id) si tu héberges sur GitHub Pages -->
                 <form id="contact-form" action="contact.php" method="POST" class="custom-form cyber-card">
                     <input type="text" name="name" placeholder="IDENTIFIANT (Nom / Entreprise)" required>
                     <input type="email" name="email" placeholder="ADRESSE IP (Votre Email)" required>
                     <textarea name="message" rows="4" placeholder="REQUÊTE (Votre message)..." required></textarea>
                     <button type="submit" class="submit-btn">TRANSMETTRE DONNÉES</button>
-                    <p id="form-status" class="form-status"></p>
                 </form>
             </div>
         </section>

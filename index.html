@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nizar Rabhi - Digivers SLAM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Écran de démarrage Borg OS -->
+    <div id="boot-screen">
+        <div class="system-text" id="boot-text">INITIALISATION BORG_OS...</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+    </div>
+
+    <!-- Pluie binaire et Scanlines -->
+    <div class="scanlines"></div>
+    <canvas id="digiverse-canvas"></canvas>
+
+    <!-- Barre de navigation complète[cite: 3] -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-element">NR_SYS</div>
+            <ul class="nav-links">
+                <li><a href="#presentation" class="active-link hacker-text" data-value="PRÉSENTATION">PRÉSENTATION</a></li>
+                <li><a href="#parcours-sio" class="hacker-text" data-value="PARCOURS & SIO">PARCOURS & SIO</a></li>
+                <li><a href="#projets" class="hacker-text" data-value="PROJETS">PROJETS</a></li>
+                <li><a href="#veille" class="hacker-text" data-value="VEILLE">VEILLE</a></li>
+                <li><a href="#certifications" class="hacker-text" data-value="CERTIFICATIONS">CERTIFICATIONS</a></li>
+                <li><a href="#experiences" class="hacker-text" data-value="EXPÉRIENCES">EXPÉRIENCES</a></li>
+                <li><a href="#competences" class="hacker-text" data-value="COMPÉTENCES">COMPÉTENCES</a></li>
+                <li><a href="#contact" class="contact-btn">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <!-- PRÉSENTATION -->
+        <section id="presentation" class="section hero">
+            <div class="hero-content">
+                <p class="system-alert">> SYSTEM ACCESS GRANTED</p>
+                <h1 class="cyan-glow" id="typewriter"></h1>
+                <h2 class="hacker-text" data-value="Développeur & Administrateur Systèmes">Développeur & Administrateur Systèmes</h2>
+                <div class="separator-cyan"></div>
+                <p class="terminal-text">Passionné par l'administration des systèmes, les réseaux et le développement web. Je mets mes compétences techniques au service de projets stimulants et d'infrastructures performantes.</p>
+            </div>
+        </section>
+
+        <!-- PARCOURS & SIO -->
+        <section id="parcours-sio" class="section">
+            <h2 class="section-title">BASE DE DONNÉES : FORMATION</h2>
+            <div class="card-grid">
+                <div class="card cyber-card border-cyan">
+                    <h3 class="hacker-text" data-value="BTS SIO - Option SLAM">BTS SIO - Option SLAM</h3>
+                    <p class="date">Sept 2025 - Actuel | Lycée Paul Louis Courier, Tours</p>
+                </div>
+                <div class="card cyber-card border-white">
+                    <h3 class="hacker-text" data-value="Bac Pro SN - Option RISC">Bac Pro SN - Option RISC</h3>
+                    <p class="date">Sept 2022 - Juil 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS (Tirés de vos réalisations en stage) -->
+        <section id="projets" class="section">
+            <h2 class="section-title">RÉPERTOIRE : PROJETS</h2>
+            <div class="card-grid">
+                <div class="card cyber-card">
+                    <h3 class="cyan-text">Déploiement Serveurs & GPO</h3>
+                    <p>Mise en place d'une infrastructure avec serveurs Windows 2019 et Linux. Configuration stricte des stratégies de groupe (GPO) pour la sécurité réseau.</p>
+                </div>
+                <div class="card cyber-card">
+                    <h3 class="cyan-text">Architecture NAS & Résilience</h3>
+                    <p>Configuration et synchronisation de serveurs de stockage NAS, création de réseaux de secours et schémas d'infrastructure.</p>
+                </div>
+                <div class="card cyber-card">
+                    <h3 class="cyan-text">Application Web Dynamique</h3>
+                    <p>Développement en Ruby, avec création, mise en place et interfaçage d'une base de données SQL sur serveur distant.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VEILLE TECHNOLOGIQUE -->
+        <section id="veille" class="section">
+            <h2 class="section-title">RADAR : VEILLE TECHNOLOGIQUE</h2>
+            <div class="cyber-card border-cyan">
+                <h3 class="cyan-text">Cybersécurité & Data Privacy</h3>
+                <p>Suivi régulier des protocoles de sécurité réseau, des vulnérabilités des systèmes d'exploitation (Windows/Linux) et des normes légales concernant le traitement des données (RGPD).</p>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifications" class="section">
+            <h2 class="section-title">PROTOCOLES VALIDÉS : CERTIFICATIONS</h2>
+            <div class="card-grid">
+                <div class="card cyber-card border-cyan">
+                    <h3 class="hacker-text" data-value="ANSSI">ANSSI</h3>
+                    <p>Sécurité informatique et cybersécurité</p>
+                </div>
+                <div class="card cyber-card border-cyan">
+                    <h3 class="hacker-text" data-value="CNIL">CNIL</h3>
+                    <p>RGPD et protection des données personnelles</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPÉRIENCES -->
+        <section id="experiences" class="section">
+            <h2 class="section-title">LOGS : PARCOURS PRO</h2>
+            <div class="timeline">
+                <div class="timeline-item cyber-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="hacker-text" data-value="Développeur - stock2com">Développeur - stock2com</h3>
+                    <p class="date">Mai 2025 - Juin 2025 | Tours</p>
+                    <p>Programmation Ruby, BDD sur serveur, intégration web.</p>
+                </div>
+                <div class="timeline-item cyber-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="hacker-text" data-value="Tech Info - IUT TOURS NORD">Tech Info - IUT TOURS NORD</h3>
+                    <p class="date">Nov 2024 - Déc 2024 | Tours</p>
+                    <p>Serveurs Windows 2019/Linux, GPO, réseaux de secours.</p>
+                </div>
+                <div class="timeline-item cyber-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="hacker-text" data-value="Tech Réseau - Com. Est Tourangeau">Tech Réseau - Com. Est Tourangeau</h3>
+                    <p class="date">Jan 2024 - Fév 2024 | Montlouis</p>
+                    <p>Serveurs NAS, schémas d'infrastructure réseau.</p>
+                </div>
+                <div class="timeline-item cyber-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="hacker-text" data-value="Tech Réseau - TECHNICENTRE SNCF">Tech Réseau - TECHNICENTRE SNCF</h3>
+                    <p class="date">Juin 2023 - Juil 2023 | St-Pierre-des-Corps</p>
+                    <p>Programmation Python, informatique embarquée.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section id="competences" class="section">
+            <h2 class="section-title">MODULES SYSTÈME : COMPÉTENCES</h2>
+            <div class="skills-container">
+                <div class="skill-box cyber-card">
+                    <h3 class="cyan-text">WEB_DEV</h3>
+                    <p>HTML/CSS, PHP, Ruby on Rails</p>
+                    <div class="progress-bar-small"><div class="fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-box cyber-card">
+                    <h3 class="cyan-text">DATA_ARCHI</h3>
+                    <p>Modèle MVC, SQL (MySQL, MariaDB)</p>
+                    <div class="progress-bar-small"><div class="fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-box cyber-card">
+                    <h3 class="cyan-text">SYS_NETWORK</h3>
+                    <p>Python, Linux, Windows Server, GPO</p>
+                    <div class="progress-bar-small"><div class="fill" style="width: 80%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <h2 class="section-title">ÉTABLIR LA CONNEXION</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info-panel cyber-card">
+                    <p><span class="label">Transmission :</span> rabhinizar2@gmail.com</p>
+                    <p><span class="label">Fréquence :</span> +33 7 67 73 65 81</p>
+                    <p><span class="label">Nœud :</span> Montlouis-sur-Loire, France</p>
+                    <p><span class="label">Langue :</span> Anglais B2 (Technique)</p>
+                </div>
+                
+                <form action="contact.php" method="POST" class="custom-form cyber-card">
+                    <input type="text" name="name" placeholder="IDENTIFIANT" required>
+                    <input type="email" name="email" placeholder="ADRESSE IP (Email)" required>
+                    <textarea name="message" rows="4" placeholder="REQUÊTE..." required></textarea>
+                    <button type="submit" class="submit-btn">TRANSMETTRE DONNÉES</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nizar Rabhi. Système développé sous protocole SIO.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

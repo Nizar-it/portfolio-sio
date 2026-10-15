@@ -1,0 +1,163 @@
+:root {
+    --bg-light: #f4f7f9; /* Fond clair technologique */
+    --tech-blue: #0275d8; /* Bleu tech intense (remplace le cyan fluo) */
+    --tech-blue-dim: rgba(2, 117, 216, 0.15);
+    --text-dark: #1e293b; /* Texte principal sombre */
+    --text-muted: #475569; /* Texte secondaire */
+    --card-bg: rgba(255, 255, 255, 0.85); /* Cartes blanches translucides */
+    --font-ui: 'Share Tech Mono', monospace;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+/* CANVAS (Le Digivers version claire) et SCANLINES subtiles */
+#digiverse-canvas {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2;
+    opacity: 0.3; /* Plus visible sur fond clair */
+}
+
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Scanlines grises très discrètes pour l'effet écran */
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.02) 50%, rgba(0,0,0,0.02));
+    background-size: 100% 4px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* BOOT SCREEN */
+#boot-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: var(--font-ui);
+    color: var(--tech-blue);
+    transition: opacity 0.5s ease;
+}
+
+.progress-bar { width: 300px; height: 2px; background: #cbd5e1; margin-top: 20px; }
+.progress { width: 0%; height: 100%; background: var(--tech-blue); box-shadow: 0 0 8px var(--tech-blue-dim); }
+
+h1, h2, h3, .logo-element, .terminal-text { font-family: var(--font-ui); text-transform: uppercase; }
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0; width: 100%;
+    background: rgba(244, 247, 249, 0.9);
+    border-bottom: 2px solid var(--tech-blue);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; gap: 1rem; }
+.logo-element { font-size: 2rem; color: var(--tech-blue); font-weight: bold; }
+.nav-links { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;}
+.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: bold; font-family: var(--font-ui); font-size: 0.95rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--tech-blue); }
+.active-link { color: var(--tech-blue) !important; border-bottom: 2px solid var(--tech-blue); }
+
+.contact-btn {
+    background: transparent;
+    border: 1px solid var(--tech-blue);
+    padding: 0.4rem 1.2rem;
+    color: var(--tech-blue) !important;
+    border-radius: 4px;
+}
+.contact-btn:hover { background: var(--tech-blue); color: #fff !important; box-shadow: 0 4px 10px var(--tech-blue-dim); }
+
+.content-wrapper { position: relative; z-index: 1; }
+.section { padding: 8rem 10% 4rem; }
+
+.section-title {
+    color: var(--text-dark);
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--tech-blue);
+    padding-left: 1rem;
+}
+
+.system-alert { color: var(--tech-blue); font-family: var(--font-ui); margin-bottom: 1rem; font-weight: bold; }
+.cyan-glow { font-size: 3.5rem; color: var(--text-dark); margin-bottom: 1rem; height: 4.5rem; }
+.terminal-text { color: var(--text-muted); }
+
+/* CARTES CYBERNÉTIQUES CLAIRES */
+.cyber-card {
+    background: var(--card-bg);
+    border: 1px solid #cbd5e1;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.cyber-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--tech-blue), transparent);
+    transform: translateX(-100%); transition: 0.5s;
+}
+.cyber-card:hover::before { transform: translateX(100%); }
+.cyber-card:hover { border-color: var(--tech-blue); box-shadow: 0 10px 20px var(--tech-blue-dim); transform: translateY(-5px); }
+
+.border-cyan { border-left: 4px solid var(--tech-blue); }
+.border-white { border-left: 4px solid #cbd5e1; } /* Remplacé par gris clair */
+
+.card-grid, .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.cyan-text { color: var(--tech-blue); font-family: var(--font-ui); margin-bottom: 1rem; font-size: 1.5rem;}
+.date { color: var(--text-muted); font-family: var(--font-ui); font-size: 0.9rem; margin-bottom: 1rem; font-weight: bold; }
+
+.progress-bar-small { width: 100%; height: 6px; background: #e2e8f0; margin-top: 1rem; border-radius: 3px; }
+.fill { height: 100%; background: var(--tech-blue); border-radius: 3px; }
+
+/* TIMELINE CYBER */
+.timeline { border-left: 2px dashed var(--tech-blue); padding-left: 2rem; margin-left: 1rem; }
+.timeline-item { margin-bottom: 2.5rem; }
+.timeline-dot {
+    position: absolute; left: -41px; top: 20px; width: 14px; height: 14px;
+    background: var(--bg-light); border: 3px solid var(--tech-blue);
+    border-radius: 50%;
+}
+
+/* FORMULAIRE */
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+@media (max-width: 768px) { .contact-wrapper { grid-template-columns: 1fr; } }
+.contact-info-panel .label { color: var(--tech-blue); font-family: var(--font-ui); font-weight: bold; }
+.contact-info-panel p { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-dark); }
+
+.custom-form { display: flex; flex-direction: column; gap: 1.5rem; }
+.custom-form input, .custom-form textarea {
+    width: 100%; padding: 1rem; background: #ffffff;
+    border: 1px solid #cbd5e1; color: var(--text-dark); font-family: var(--font-ui);
+    border-radius: 4px;
+}
+.custom-form input:focus, .custom-form textarea:focus { outline: none; border-color: var(--tech-blue); box-shadow: 0 0 0 3px var(--tech-blue-dim); }
+
+.submit-btn {
+    background: var(--tech-blue); color: #fff; border: none; border-radius: 4px;
+    padding: 1rem; font-family: var(--font-ui); font-size: 1.2rem; cursor: pointer; transition: 0.3s;
+}
+.submit-btn:hover { background: #025aa5; box-shadow: 0 4px 10px var(--tech-blue-dim); }
+
+footer { text-align: center; padding: 2rem; border-top: 1px solid #cbd5e1; font-family: var(--font-ui); color: var(--text-muted); }

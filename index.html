@@ -20,19 +20,27 @@
     <div class="scanlines"></div>
     <canvas id="digiverse-canvas"></canvas>
 
-    <!-- Barre de navigation complète[cite: 3] -->
+    <!-- Barre de navigation complète -->
     <header>
         <nav class="navbar">
             <div class="logo-element">NR_SYS</div>
-            <ul class="nav-links">
-                <li><a href="#presentation" class="active-link hacker-text" data-value="PRÉSENTATION">PRÉSENTATION</a></li>
-                <li><a href="#parcours-sio" class="hacker-text" data-value="PARCOURS & SIO">PARCOURS & SIO</a></li>
-                <li><a href="#projets" class="hacker-text" data-value="PROJETS">PROJETS</a></li>
-                <li><a href="#veille" class="hacker-text" data-value="VEILLE">VEILLE</a></li>
-                <li><a href="#certifications" class="hacker-text" data-value="CERTIFICATIONS">CERTIFICATIONS</a></li>
-                <li><a href="#experiences" class="hacker-text" data-value="EXPÉRIENCES">EXPÉRIENCES</a></li>
-                <li><a href="#competences" class="hacker-text" data-value="COMPÉTENCES">COMPÉTENCES</a></li>
-                <li><a href="#contact" class="contact-btn">CONTACT</a></li>
+            
+            <!-- Bouton Menu Burger pour mobile -->
+            <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#presentation" class="nav-item active-link hacker-text" data-value="PRÉSENTATION">PRÉSENTATION</a></li>
+                <li><a href="#parcours-sio" class="nav-item hacker-text" data-value="PARCOURS & SIO">PARCOURS & SIO</a></li>
+                <li><a href="#projets" class="nav-item hacker-text" data-value="PROJETS">PROJETS</a></li>
+                <li><a href="#veille" class="nav-item hacker-text" data-value="VEILLE">VEILLE</a></li>
+                <li><a href="#certifications" class="nav-item hacker-text" data-value="CERTIFICATIONS">CERTIFICATIONS</a></li>
+                <li><a href="#experiences" class="nav-item hacker-text" data-value="EXPÉRIENCES">EXPÉRIENCES</a></li>
+                <li><a href="#competences" class="nav-item hacker-text" data-value="COMPÉTENCES">COMPÉTENCES</a></li>
+                <li><a href="#contact" class="nav-item contact-btn">CONTACT</a></li>
             </ul>
         </nav>
     </header>
@@ -43,9 +51,15 @@
             <div class="hero-content">
                 <p class="system-alert">> SYSTEM ACCESS GRANTED</p>
                 <h1 class="cyan-glow" id="typewriter"></h1>
-                <h2 class="hacker-text" data-value="Développeur & Administrateur Systèmes">Développeur & Administrateur Systèmes</h2>
+                <h2 class="hacker-text subtitle-hero" data-value="Développeur Full-Stack & Administrateur Systèmes">Développeur Full-Stack & Administrateur Systèmes</h2>
                 <div class="separator-cyan"></div>
-                <p class="terminal-text">Passionné par l'administration des systèmes, les réseaux et le développement web. Je mets mes compétences techniques au service de projets stimulants et d'infrastructures performantes.</p>
+                <p class="terminal-text">Étudiant en BTS SIO option SLAM, passionné par le développement d'applications web/logicielles et fort d'un bagage solide en administration systèmes et réseaux. Je conçois des solutions performantes, sécurisées et maintenables.</p>
+                
+                <!-- Boutons essentiels pour le jury BTS SIO et les recruteurs -->
+                <div class="hero-actions">
+                    <a href="cv-nizar-rabhi.pdf" target="_blank" class="cyber-btn primary-btn">[ TÉLÉCHARGER MON CV ]</a>
+                    <a href="tableau-synthese-e4.pdf" target="_blank" class="cyber-btn secondary-btn">[ TABLEAU DE SYNTHÈSE E4 ]</a>
+                </div>
             </div>
         </section>
 
@@ -56,39 +70,110 @@
                 <div class="card cyber-card border-cyan">
                     <h3 class="hacker-text" data-value="BTS SIO - Option SLAM">BTS SIO - Option SLAM</h3>
                     <p class="date">Sept 2025 - Actuel | Lycée Paul Louis Courier, Tours</p>
+                    <p>Solutions Logicielles et Applications Métiers : conception et développement d'applications (Web, POO, MVC), gestion de bases de données relationnelles et cybersécurité applicative.</p>
                 </div>
                 <div class="card cyber-card border-white">
                     <h3 class="hacker-text" data-value="Bac Pro SN - Option RISC">Bac Pro SN - Option RISC</h3>
                     <p class="date">Sept 2022 - Juil 2025</p>
+                    <p>Réseaux Informatiques et Systèmes Communicants : déploiement d'infrastructures réseaux, administration de serveurs Linux/Windows et virtualisation.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PROJETS (Tirés de vos réalisations en stage) -->
+        <!-- PROJETS (Enrichis pour l'épreuve E4 / E5 SLAM) -->
         <section id="projets" class="section">
-            <h2 class="section-title">RÉPERTOIRE : PROJETS</h2>
+            <h2 class="section-title">RÉPERTOIRE : PROJETS & RÉALISATIONS</h2>
             <div class="card-grid">
-                <div class="card cyber-card">
-                    <h3 class="cyan-text">Déploiement Serveurs & GPO</h3>
-                    <p>Mise en place d'une infrastructure avec serveurs Windows 2019 et Linux. Configuration stricte des stratégies de groupe (GPO) pour la sécurité réseau.</p>
+                <div class="card cyber-card project-card">
+                    <div>
+                        <span class="project-category">DÉVELOPPEMENT WEB (SLAM)</span>
+                        <h3 class="cyan-text">Application Web Dynamique</h3>
+                        <p>Développement d'une application métier en Ruby on Rails avec architecture MVC. Création, modélisation et interfaçage d'une base de données SQL sur serveur distant.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Ruby on Rails</span>
+                            <span class="tag">SQL / MariaDB</span>
+                            <span class="tag">MVC</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" class="project-btn">> CODE SOURCE (GITHUB)</a>
+                        <a href="#" target="_blank" class="project-btn">> DOCUMENTATION</a>
+                    </div>
                 </div>
-                <div class="card cyber-card">
-                    <h3 class="cyan-text">Architecture NAS & Résilience</h3>
-                    <p>Configuration et synchronisation de serveurs de stockage NAS, création de réseaux de secours et schémas d'infrastructure.</p>
+
+                <div class="card cyber-card project-card">
+                    <div>
+                        <span class="project-category">DÉVELOPPEMENT & SCRIPTING (SLAM)</span>
+                        <h3 class="cyan-text">Outil d'Automatisation & Embarqué</h3>
+                        <p>Développement de scripts Python pour le traitement automatisé de données et l'interfaçage avec des systèmes d'informatique embarquée (réalisé au Technicentre SNCF).</p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scripting</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" class="project-btn">> FICHE RÉALISATION</a>
+                    </div>
                 </div>
-                <div class="card cyber-card">
-                    <h3 class="cyan-text">Application Web Dynamique</h3>
-                    <p>Développement en Ruby, avec création, mise en place et interfaçage d'une base de données SQL sur serveur distant.</p>
+
+                <div class="card cyber-card project-card">
+                    <div>
+                        <span class="project-category">SYSTÈMES & SÉCURITÉ (SISR/SLAM)</span>
+                        <h3 class="cyan-text">Déploiement Serveurs, GPO & NAS</h3>
+                        <p>Mise en place d'une infrastructure hybride Windows Server 2019 / Linux. Configuration des stratégies de groupe (GPO), synchronisation de stockage NAS et réseau de secours.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Windows Server 2019</span>
+                            <span class="tag">Active Directory / GPO</span>
+                            <span class="tag">NAS</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" class="project-btn">> SCHÉMA RÉSEAU & DOC</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- VEILLE TECHNOLOGIQUE -->
+        <!-- VEILLE TECHNOLOGIQUE (Structurée pour le jury BTS SIO) -->
         <section id="veille" class="section">
             <h2 class="section-title">RADAR : VEILLE TECHNOLOGIQUE</h2>
-            <div class="cyber-card border-cyan">
-                <h3 class="cyan-text">Cybersécurité & Data Privacy</h3>
-                <p>Suivi régulier des protocoles de sécurité réseau, des vulnérabilités des systèmes d'exploitation (Windows/Linux) et des normes légales concernant le traitement des données (RGPD).</p>
+            
+            <!-- Thématique et méthodologie -->
+            <div class="cyber-card border-cyan veille-intro">
+                <h3 class="cyan-text">Thématique : Cybersécurité Applicative & Protection des Données (RGPD)</h3>
+                <p>En tant que futur développeur SLAM, ma veille porte sur la sécurisation du code (OWASP Top 10), les vulnérabilités des dépendances logicielles et la conformité au RGPD dès la conception (<em>Privacy by Design</em>).</p>
+                <div class="veille-tools">
+                    <span class="tool-label">Outils de collecte (Push/Pull) :</span>
+                    <span class="tag">Feedly (Flux RSS)</span>
+                    <span class="tag">Alertes CERT-FR / ANSSI</span>
+                    <span class="tag">Google Alerts</span>
+                    <span class="tag">Daily.dev</span>
+                </div>
+            </div>
+
+            <!-- Articles de veille -->
+            <div class="card-grid">
+                <div class="card cyber-card">
+                    <p class="date">OCTOBRE 2026 | SOURCE : OWASP / CERT-FR</p>
+                    <h3 class="cyan-text">Sécurité des API et Injections SQL</h3>
+                    <p>Analyse des nouvelles recommandations sur la sécurisation des requêtes SQL via les ORM modernes (ActiveRecord, PDO) et la gestion des jetons d'authentification.</p>
+                    <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="project-btn">> CONSULTER LA SOURCE</a>
+                </div>
+                <div class="card cyber-card">
+                    <p class="date">SEPTEMBRE 2026 | SOURCE : CNIL</p>
+                    <h3 class="cyan-text">Guide RGPD pour les Équipes de Développement</h3>
+                    <p>Mise à jour des bonnes pratiques de la CNIL concernant le chiffrement des mots de passe (hachage bcrypt/Argon2), la minimisation des données et la gestion des journaux (logs).</p>
+                    <a href="https://www.cnil.fr/fr/guide-rgpd-du-developpeur" target="_blank" class="project-btn">> CONSULTER LA SOURCE</a>
+                </div>
+                <div class="card cyber-card">
+                    <p class="date">AOÛT 2026 | SOURCE : GITHUB SECURITY</p>
+                    <h3 class="cyan-text">Vulnérabilités des Dépendances Open-Source</h3>
+                    <p>Importance de l'audit automatisé des paquets (Gems Ruby, Composer PHP, pip Python) pour prévenir les attaques de type <em>Supply Chain</em> dans les projets web.</p>
+                    <a href="https://github.com/security" target="_blank" class="project-btn">> CONSULTER LA SOURCE</a>
+                </div>
             </div>
         </section>
 
@@ -97,43 +182,53 @@
             <h2 class="section-title">PROTOCOLES VALIDÉS : CERTIFICATIONS</h2>
             <div class="card-grid">
                 <div class="card cyber-card border-cyan">
-                    <h3 class="hacker-text" data-value="ANSSI">ANSSI</h3>
-                    <p>Sécurité informatique et cybersécurité</p>
+                    <h3 class="hacker-text" data-value="SecNumacadémie - ANSSI">SecNumacadémie - ANSSI</h3>
+                    <p class="date">Attestation de réussite</p>
+                    <p>Panorama de la SSI, sécurité de l'authentification, sécurité sur Internet et sécurité du poste de travail et du nomadisme.</p>
                 </div>
                 <div class="card cyber-card border-cyan">
-                    <h3 class="hacker-text" data-value="CNIL">CNIL</h3>
-                    <p>RGPD et protection des données personnelles</p>
+                    <h3 class="hacker-text" data-value="Atelier RGPD - CNIL">Atelier RGPD - CNIL</h3>
+                    <p class="date">Modules validés</p>
+                    <p>Principes de la protection des données, responsabilités des acteurs et intégration de la sécurité des données personnelles dans les projets informatiques.</p>
                 </div>
             </div>
         </section>
 
-        <!-- EXPÉRIENCES -->
+        <!-- EXPÉRIENCES (Structure HTML corrigée pour afficher les points de la timeline) -->
         <section id="experiences" class="section">
             <h2 class="section-title">LOGS : PARCOURS PRO</h2>
             <div class="timeline">
-                <div class="timeline-item cyber-card">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <h3 class="hacker-text" data-value="Développeur - stock2com">Développeur - stock2com</h3>
-                    <p class="date">Mai 2025 - Juin 2025 | Tours</p>
-                    <p>Programmation Ruby, BDD sur serveur, intégration web.</p>
+                    <div class="cyber-card">
+                        <h3 class="hacker-text" data-value="Développeur - stock2com">Développeur - stock2com</h3>
+                        <p class="date">Mai 2025 - Juin 2025 | Tours</p>
+                        <p>Programmation en Ruby, conception et déploiement de bases de données sur serveur distant, intégration web et travail en équipe de développement.</p>
+                    </div>
                 </div>
-                <div class="timeline-item cyber-card">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <h3 class="hacker-text" data-value="Tech Info - IUT TOURS NORD">Tech Info - IUT TOURS NORD</h3>
-                    <p class="date">Nov 2024 - Déc 2024 | Tours</p>
-                    <p>Serveurs Windows 2019/Linux, GPO, réseaux de secours.</p>
+                    <div class="cyber-card">
+                        <h3 class="hacker-text" data-value="Tech Info - IUT TOURS NORD">Tech Info - IUT TOURS NORD</h3>
+                        <p class="date">Nov 2024 - Déc 2024 | Tours</p>
+                        <p>Administration de serveurs Windows 2019 et Linux, déploiement de stratégies de groupe (GPO), mise en place de réseaux de secours.</p>
+                    </div>
                 </div>
-                <div class="timeline-item cyber-card">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <h3 class="hacker-text" data-value="Tech Réseau - Com. Est Tourangeau">Tech Réseau - Com. Est Tourangeau</h3>
-                    <p class="date">Jan 2024 - Fév 2024 | Montlouis</p>
-                    <p>Serveurs NAS, schémas d'infrastructure réseau.</p>
+                    <div class="cyber-card">
+                        <h3 class="hacker-text" data-value="Tech Réseau - Com. Est Tourangeau">Tech Réseau - Com. Est Tourangeau</h3>
+                        <p class="date">Jan 2024 - Fév 2024 | Montlouis-sur-Loire</p>
+                        <p>Configuration et synchronisation de serveurs NAS, réalisation de schémas d'infrastructure réseau et maintenance du parc.</p>
+                    </div>
                 </div>
-                <div class="timeline-item cyber-card">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <h3 class="hacker-text" data-value="Tech Réseau - TECHNICENTRE SNCF">Tech Réseau - TECHNICENTRE SNCF</h3>
-                    <p class="date">Juin 2023 - Juil 2023 | St-Pierre-des-Corps</p>
-                    <p>Programmation Python, informatique embarquée.</p>
+                    <div class="cyber-card">
+                        <h3 class="hacker-text" data-value="Tech Réseau - TECHNICENTRE SNCF">Tech Réseau - TECHNICENTRE SNCF</h3>
+                        <p class="date">Juin 2023 - Juil 2023 | St-Pierre-des-Corps</p>
+                        <p>Programmation Python et maintenance de systèmes d'informatique embarquée ferroviaire.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -143,18 +238,18 @@
             <h2 class="section-title">MODULES SYSTÈME : COMPÉTENCES</h2>
             <div class="skills-container">
                 <div class="skill-box cyber-card">
-                    <h3 class="cyan-text">WEB_DEV</h3>
-                    <p>HTML/CSS, PHP, Ruby on Rails</p>
+                    <h3 class="cyan-text">WEB_DEV & LOGICIEL</h3>
+                    <p>HTML5/CSS3, JavaScript, PHP, Ruby on Rails, Python</p>
                     <div class="progress-bar-small"><div class="fill" style="width: 85%;"></div></div>
                 </div>
                 <div class="skill-box cyber-card">
-                    <h3 class="cyan-text">DATA_ARCHI</h3>
-                    <p>Modèle MVC, SQL (MySQL, MariaDB)</p>
-                    <div class="progress-bar-small"><div class="fill" style="width: 75%;"></div></div>
+                    <h3 class="cyan-text">DATA_ARCHI & OUTILS</h3>
+                    <p>Architecture MVC, SQL (MySQL, MariaDB), Git / GitHub</p>
+                    <div class="progress-bar-small"><div class="fill" style="width: 80%;"></div></div>
                 </div>
                 <div class="skill-box cyber-card">
                     <h3 class="cyan-text">SYS_NETWORK</h3>
-                    <p>Python, Linux, Windows Server, GPO</p>
+                    <p>Linux (Debian/Ubuntu), Windows Server, GPO, NAS</p>
                     <div class="progress-bar-small"><div class="fill" style="width: 80%;"></div></div>
                 </div>
             </div>
@@ -165,24 +260,26 @@
             <h2 class="section-title">ÉTABLIR LA CONNEXION</h2>
             <div class="contact-wrapper">
                 <div class="contact-info-panel cyber-card">
-                    <p><span class="label">Transmission :</span> rabhinizar2@gmail.com</p>
-                    <p><span class="label">Fréquence :</span> +33 7 67 73 65 81</p>
-                    <p><span class="label">Nœud :</span> Montlouis-sur-Loire, France</p>
+                    <p><span class="label">Transmission :</span> <a href="mailto:rabhinizar2@gmail.com" class="contact-link">rabhinizar2@gmail.com</a></p>
+                    <p><span class="label">Fréquence :</span> <a href="tel:+33767736581" class="contact-link">+33 7 67 73 65 81</a></p>
+                    <p><span class="label">Nœud :</span> Montlouis-sur-Loire / Tours, France</p>
                     <p><span class="label">Langue :</span> Anglais B2 (Technique)</p>
                 </div>
                 
-                <form action="contact.php" method="POST" class="custom-form cyber-card">
-                    <input type="text" name="name" placeholder="IDENTIFIANT" required>
-                    <input type="email" name="email" placeholder="ADRESSE IP (Email)" required>
-                    <textarea name="message" rows="4" placeholder="REQUÊTE..." required></textarea>
+                <!-- Astuce : Remplace l'URL action par un lien Formspree (ex: https://formspree.io/f/ton_id) si tu héberges sur GitHub Pages -->
+                <form id="contact-form" action="contact.php" method="POST" class="custom-form cyber-card">
+                    <input type="text" name="name" placeholder="IDENTIFIANT (Nom / Entreprise)" required>
+                    <input type="email" name="email" placeholder="ADRESSE IP (Votre Email)" required>
+                    <textarea name="message" rows="4" placeholder="REQUÊTE (Votre message)..." required></textarea>
                     <button type="submit" class="submit-btn">TRANSMETTRE DONNÉES</button>
+                    <p id="form-status" class="form-status"></p>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Nizar Rabhi. Système développé sous protocole SIO.</p>
+        <p>&copy; 2026 Nizar Rabhi. Système développé sous protocole BTS SIO SLAM.</p>
     </footer>
     <script src="script.js"></script>
 </body>
